@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Update User{% endblock title %}
+
+{% block body %}
+<div class="container my-3">
+    <h2>Update Your Data</h2>
+    <form action="/update/{{ show_data.Sno }}" method="POST">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" value="{{ show_data.E_Mail }}" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="text" class="form-control" name="password" value="{{ show_data.Passwords }}" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+{% endblock body %}
